@@ -11,10 +11,10 @@ import { describe, test, expect } from "@jest/globals"
 import { Text, TouchableOpacity } from 'react-native';
 
 describe('App', () => {
-  // test('renders correctly', () => {
-  //   const tree = renderer.create(<App />).toJSON();
-  //   expect(tree).toMatchSnapshot();
-  // });
+  test('renders correctly', () => {
+    const tree = renderer.create(<App />).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 
     test('Clicking "Increment" button with 100 press', () => {
     const tree = renderer.create(<App />);
@@ -26,7 +26,7 @@ describe('App', () => {
       });
     }
     const countText = instance.findAllByType(Text)[0];
-    const countTextContent = countText.props.children.join(''); // Convert array to string
+    const countTextContent = countText.props.children.join(''); 
     expect(countTextContent).toBe('Count: 100');
   });
 
@@ -37,7 +37,7 @@ describe('App', () => {
     const tree = renderer.create(<App />);
     const instance = tree.root;
     const countText = instance.findAllByType(Text)[0];
-    const countTextContent = countText.props.children.join(''); // Convert array to string
+    const countTextContent = countText.props.children.join(''); 
     expect(countTextContent).toBe('Count: 0');
   });
 
@@ -56,7 +56,7 @@ describe('App', () => {
       button.props.onPress();
     });
     const countText = instance.findAllByType(Text)[0];
-    const countTextContent = countText.props.children.join(''); // Convert array to string
+    const countTextContent = countText.props.children.join(''); 
     expect(countTextContent).toBe('Count: 1');
   });
 
